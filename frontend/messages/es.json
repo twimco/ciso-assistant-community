@@ -1308,6 +1308,8 @@
 	"attackPaths": "Rutas de ataque",
 	"attackStage": "Etapa del ataque",
 	"audit": "Auditoría",
+	"engagements": "Engagements",
+	"workpapers": "Workpapers",
 	"auditLog": "Registro de auditoría",
 	"auditName": "Nombre de Auditoría",
 	"auditsWithSameFrameworkPrioritized": "Las auditorías con el mismo marco de referencia y perímetro se priorizan en la parte superior.",

@@ -1308,6 +1308,8 @@
 	"attackPaths": "Angriffspfade",
 	"attackStage": "Angriffsphase",
 	"audit": "Audit",
+	"engagements": "Engagements",
+	"workpapers": "Workpapers",
 	"auditLog": "Audit-Protokoll",
 	"auditName": "Audit-Name",
 	"auditsWithSameFrameworkPrioritized": "Audits mit demselben Referenzwerk und Perimeter werden oben priorisiert.",

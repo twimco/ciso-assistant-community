@@ -218,6 +218,7 @@ class FeatureFlagsSerializer(serializers.ModelSerializer):
     metrology = serializers.BooleanField(
         source="value.metrology", required=False, default=True
     )
+    audit = serializers.BooleanField(source="value.audit", required=False, default=True)
 
     class Meta:
         model = GlobalSettings
@@ -247,6 +248,7 @@ class FeatureFlagsSerializer(serializers.ModelSerializer):
             "validation_flows",
             "outgoing_webhooks",
             "metrology",
+            "audit",
         ]
         read_only_fields = ["name"]
 

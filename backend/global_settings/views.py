@@ -47,14 +47,20 @@ class FeatureFlagsViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance)
-        return Response(serializer.data)
+        data = serializer.data
+        # Ensure all fields are present in response (serializer should handle this)
+        return Response(data)
 
     def update(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data)
+        data = serializer.data
+        # Ensure audit field is present in response
+        if 'audit' not in data:
+            data['audit'] = True
+        return Response(data)
 
     def get_object(self):
         obj, _ = self.model.objects.get_or_create(name="feature-flags")
@@ -72,14 +78,22 @@ class GeneralSettingsViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance)
-        return Response(serializer.data)
+        data = serializer.data
+        # Ensure audit field is present in response
+        if 'audit' not in data:
+            data['audit'] = True
+        return Response(data)
 
     def update(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data)
+        data = serializer.data
+        # Ensure audit field is present in response
+        if 'audit' not in data:
+            data['audit'] = True
+        return Response(data)
 
     def get_object(self):
         obj = self.model.objects.get(name="general")

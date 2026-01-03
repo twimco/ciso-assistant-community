@@ -275,6 +275,41 @@ export const navData = {
 			]
 		},
 		{
+			name: 'audit',
+			items: [
+				{
+					name: 'engagements',
+					fa_icon: 'fa-solid fa-handshake',
+					href: '/audit/engagements',
+					permissions: ['view_engagement']
+				},
+				{
+					name: 'workpapers',
+					fa_icon: 'fa-solid fa-file-lines',
+					href: '/audit/workpapers',
+					permissions: ['view_workpaper']
+				},
+				{
+					name: 'evidence',
+					fa_icon: 'fa-solid fa-folder-open',
+					href: '/audit/evidence',
+					permissions: ['view_evidence']
+				},
+				{
+					name: 'findings',
+					fa_icon: 'fa-solid fa-search',
+					href: '/audit/findings',
+					permissions: ['view_finding']
+				},
+				{
+					name: 'auditReports',
+					fa_icon: 'fa-solid fa-file-invoice',
+					href: '/audit/audit-reports',
+					permissions: ['view_report']
+				}
+			]
+		},
+		{
 			name: 'metrology',
 			items: [
 				{

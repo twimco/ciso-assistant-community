@@ -540,7 +540,8 @@ export const FeatureFlagsSchema = z.object({
 	reports: z.boolean().optional(),
 	validation_flows: z.boolean().optional(),
 	outgoing_webhooks: z.boolean().optional(),
-	metrology: z.boolean().optional()
+	metrology: z.boolean().optional(),
+	audit: z.boolean().optional()
 });
 
 export const SSOSettingsSchema = z.object({
