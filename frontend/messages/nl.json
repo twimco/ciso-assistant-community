@@ -1304,6 +1304,8 @@
 	"attackPaths": "Aanvalspaden",
 	"attackStage": "Aanvalsfase",
 	"audit": "Audit",
+	"engagements": "Engagements",
+	"workpapers": "Workpapers",
 	"auditLog": "Auditlogboek",
 	"auditName": "Auditnaam",
 	"auditsWithSameFrameworkPrioritized": "Audits met hetzelfde framework en perimeter krijgen prioriteit bovenaan.",

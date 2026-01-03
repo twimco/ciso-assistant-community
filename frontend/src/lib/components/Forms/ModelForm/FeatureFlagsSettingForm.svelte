@@ -9,6 +9,15 @@
 
 	let { form }: Props = $props();
 
+	// Ensure `audit` is always present in the form data (older DB rows / cached UI state can omit it),
+	// otherwise the checkbox may not render or bind consistently.
+	$effect(() => {
+		// `form` is a SuperValidated object; its data is mutable and is what BackgroundCheckbox binds to.
+		if (form?.data && typeof form.data.audit === 'undefined') {
+			form.data.audit = true;
+		}
+	});
+
 	const featureFlagGroups = [
 		{
 			category: m.organization(),
@@ -141,6 +150,11 @@
 					field: 'bia',
 					label: m.businessImpactAnalysis(),
 					description: m.businessImpactAnalysisDescription()
+				},
+				{
+					field: 'audit',
+					label: m.audit(),
+					description: m.auditDescription()
 				}
 			]
 		},
